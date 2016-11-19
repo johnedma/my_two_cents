@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/justin1dennison/my_two_cents/issues"
   },
-  "homepage": "https://github.com/justin1dennison/my_two_cents#readme"
+  "homepage": "https://github.com/justin1dennison/my_two_cents#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
