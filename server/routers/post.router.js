@@ -41,7 +41,18 @@ router.post('/posts', function(req, res){
     });
   });
 });
-router.put('/posts/:id', function(req, res){});
+router.put('/posts/:id', function(req, res){
+  Post.findOneAndUpdate({_id: req.params.id}, req.body, function(err, oldPost){
+    if(err){
+      return res.status(500).json({
+        msg: err
+      });
+    }
+    return res.status(200).json({
+      msg: oldPost
+    });
+  })
+});
 router.delete('/posts/:id', function(req, res){});
 
 
