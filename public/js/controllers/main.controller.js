@@ -2,9 +2,9 @@
   angular.module('two-cents')
       .controller("MainController", MainController);
 
-  MainController.$inject = ['$scope'];
+  MainController.$inject = ['$scope', 'PostService'];
 
-  function MainController($scope){
+  function MainController($scope, PostService){
     $scope.message = "I work!"
     $scope.stuff = stuff;
 
