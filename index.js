@@ -9,11 +9,12 @@ var mongoURI = process.env.MONGOURI || require('./config.js').mongoURI;
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
+server.use(express.static(__dirname + '/public'));
 
 mongoose.connect(mongoURI); //establish the connection to the mongo database
 
 server.get('/', function(req, res){
-  res.send('I am working!');
+  res.sendFile('public/html/index.html', {root: __dirname});
 });
 server.use(postRouter);
 
