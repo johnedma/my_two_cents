@@ -15,6 +15,9 @@
       Body:
       <textarea cols="30" rows="10" ng-model='newPost.body'></textarea> <br>
       <button class="btn btn-default" ng-click='create(newPost)'>Create</button>
+      <br>
+      <input type="text" ng-mdodel='deleteId'>
+      <button class="btn btn-danger" ng-click='delete(deleteId)'>Delete</button>
       <pre>
         {{ posts | json }}
       </pre>
