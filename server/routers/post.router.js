@@ -51,7 +51,7 @@ router.put('/posts/:id', function(req, res){ //ask why this is like this
       });
     }
     return res.status(200).json({
-      msg: oldPost
+      msg: post
     });
   });
 });
