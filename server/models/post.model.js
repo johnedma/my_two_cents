@@ -28,7 +28,11 @@ var postSchema = new Schema({
 });
 
 postSchema.pre('findOneAndUpdate', function(){
-  this.update({},{ $set: { postDate: new Date() } });
+  this.update({},{ $set: { postDate: new Date() } }); //updates date
+});
+
+postSchema.post('findOneAndUpdate', function(){ //need to reference "post" b/c it's not just raw data, we're referencing the post
+  post.summary({}, { summary: this.body.splice(0, 100) + '...'}); //updates the summary
 });
 
 var Post = mongoose.model('Post', postSchema);
